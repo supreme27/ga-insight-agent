@@ -53,13 +53,15 @@ async function sendDailyReport() {
     const metrics = await fetchGAMetrics();
     const insights = await generateInsights(metrics);
 
-    const transporter = nodemailer.createTransport({
-      service: 'gmail',
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-      }
-    });
+const transporter = nodemailer.createTransport({
+  host: 'smtp.zoho.com',
+  port: 465,
+  secure: true,
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
+  }
+});
 
     await transporter.sendMail({
       from: process.env.EMAIL_USER,
