@@ -1,4 +1,4 @@
-require('dotenv').config();
+
 const Anthropic = require('@anthropic-ai/sdk');
 const { BetaAnalyticsDataClient } = require('@google-analytics/data');
 const cron = require('node-cron');
@@ -76,5 +76,6 @@ const transporter = nodemailer.createTransport({
   }
 }
 
-cron.schedule('0 9 * * *', sendDailyReport);
+cron.schedule('15 9 * * *', sendDailyReport);
 console.log('🚀 GA Insight Agent running...');
+sendDailyReport();
