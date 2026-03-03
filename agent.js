@@ -74,46 +74,5 @@ async function sendDailyReport() {
   }
 }
 
-// Run every day at 8:00 AM
 cron.schedule('0 8 * * *', sendDailyReport);
 console.log('🚀 GA Insight Agent running...');
-
-// Uncomment the line below to send a test report immediately on startup
-// sendDailyReport();
-```
-
-4. Click **"Commit changes"** → **"Commit changes"**
-
----
-
-## Step 3 — Create `.gitignore`
-
-1. **"Add file" → "Create new file"**
-2. Name it `.gitignore`
-3. Paste:
-```
-.env
-node_modules/
-```
-4. **"Commit changes"**
-
----
-
-## Step 4 — Go back to Railway
-
-Once all 3 files are in GitHub:
-
-1. Go to [railway.app](https://railway.app)
-2. **New Project → Deploy from GitHub repo**
-3. Select `supreme27/ga-insight-agent`
-4. Go to **Variables** tab and add all your credentials
-5. Check **Logs** for `🚀 GA Insight Agent running...`
-
----
-
-Your repo should look like this when done:
-```
-ga-insight-agent/
-├── agent.js
-├── package.json
-└── .gitignore
