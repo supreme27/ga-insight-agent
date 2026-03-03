@@ -1,0 +1,15 @@
+{
+  "name": "ga-insight-agent",
+  "version": "1.0.0",
+  "main": "agent.js",
+  "scripts": {
+    "start": "node agent.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "latest",
+    "@google-analytics/data": "latest",
+    "node-cron": "latest",
+    "nodemailer": "latest",
+    "dotenv": "latest"
+  }
+}
