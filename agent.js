@@ -76,5 +76,5 @@ const transporter = nodemailer.createTransport({
   }
 }
 
-cron.schedule('0 8 * * *', sendDailyReport);
+cron.schedule('0 9 * * *', sendDailyReport);
 console.log('🚀 GA Insight Agent running...');
